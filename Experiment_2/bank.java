@@ -5,7 +5,6 @@ class bank {
     double in_bal;
     double roi;
     double time;
-
     bank() {
         roi = 3.5;
         in_bal = 10000;
