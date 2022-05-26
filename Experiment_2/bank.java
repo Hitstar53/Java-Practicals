@@ -39,9 +39,9 @@ class bank {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         bank b1 = new bank();
+        System.out.println("Welcome to Banking System:");
         while(true) {
-            System.out.println("Welcome to Banking System:");
-            System.out.println("Select 1 choice:\n1 -> Deposit\n2 -> Withdraw\n3 -> Compund Interest\n4 -> Exit");
+            System.out.println("Select 1 choice:\n1 -> Deposit\n2 -> Withdraw\n3 -> Compund Interest");
             int choice = input.nextInt();
             double deposit,bal,withdraw;
             int flag;
@@ -66,7 +66,7 @@ class bank {
                     System.out.println("Invalid Choice!");
                     break;
             }
-            System.out.println("Do you want to continue?(yes=1/0=no)");
+            System.out.println("Do you want to continue?(yes=1/no=0)");
             flag = input.nextInt();
             if(flag==0) {
                 break;
