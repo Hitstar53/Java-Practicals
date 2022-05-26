@@ -68,8 +68,11 @@ class fraction {
         }
         System.out.println("\n");
         for(int i=1;i<d;i++) {
+            num = i;
+            den = d;
+            gcd = reduce(num, den);
+            System.out.print(num/gcd+"/"+den/gcd);
             for(int j=1;j<d;j++) {
-                
                 multiplier(i, d, j, d);
             }
             System.out.println("\n");
@@ -81,7 +84,7 @@ class fraction {
         int choice,dem,flag;
         System.out.println("Welcome to Fraction Calculator:");
         while(true) {
-            System.out.println("Select a choice\n1 -> Add\n2 -> Sub\n3 -> Mul\n4 -> Div\n5 -> Mul Table\n6 -> Exit");
+            System.out.println("Select a choice\n1 -> Addition\n2 -> Subtraction\n3 -> Multiplication\n4 -> Division\n5 -> Multiple Table");
             choice = sc.nextInt();
             switch(choice) {
                 case 1:
@@ -105,9 +108,6 @@ class fraction {
                     dem = sc.nextInt();
                     f.mul_table(dem);
                     break;
-                case 6:
-                    System.out.println("Thank you");
-                    break;
                 default:
                     System.out.println("Invalid choice!");
                     break;
@@ -115,6 +115,7 @@ class fraction {
             System.out.println("Do you want to continue?(yes=1/0=no)");
             flag = sc.nextInt();
             if(flag==0) {
+                System.out.println("Thank you");
                 break;
             }
         }
