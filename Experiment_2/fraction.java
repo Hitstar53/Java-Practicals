@@ -115,7 +115,6 @@ class fraction {
             System.out.println("Do you want to continue?(yes=1/0=no)");
             flag = sc.nextInt();
             if(flag==0) {
-                System.out.println("Thank you");
                 break;
             }
         }
