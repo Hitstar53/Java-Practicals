@@ -60,7 +60,7 @@ class bank {
                     break;
                 case 3:
                     bal = b1.comp_int();
-                    System.out.println("Final amount: $"+bal);
+                    System.out.printf("Final amount: $%.2f\n",(float)bal);
                     break;
                 default:
                     System.out.println("Invalid Choice!");
