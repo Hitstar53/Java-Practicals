@@ -1,12 +1,7 @@
 import java.util.*;
 class Date {
-    int year;
-    int month;
-    int date;
-    int hrs;
-    int min;
-    int sec;
-
+    int year,month,date;
+    int hrs,min,sec;
     Date() {
         year = 2000;
         month = 01;
@@ -39,13 +34,21 @@ class Date {
         int choice,flag;
         int year,month,date,hrs,min,sec;
         while(true) {
-            System.out.println("Welcome to date displayer");
-            System.out.println("Select 1 Format\n1 -> DD/MM/YYYY\n2 -> DD/MM/YYYY, 00:00\n3 -> DD/MM/YYYY, 00:00:00");
+            System.out.println("Welcome to Date Fomatter");
+            System.out.println("Select 1 Format\n1 -> DD/MM/YYYY\n2 -> DD/MM/YYYY, HH:MM\n3 -> DD/MM/YYYY, HH:MM:SS");
             choice = sc.nextInt();
             System.out.println("Enter Year,Month and Date: ");
             year = sc.nextInt();
             month = sc.nextInt();
             date = sc.nextInt();
+            if(month>12) {
+                System.out.println("Invalid Month(1-12)");
+                break;
+            }
+            else if(date>31) {
+                System.out.println("Invalid Date(1-31)");
+                break;
+            }
             switch(choice) {
                 case 1:
                     d1.setDate(year, month, date);
@@ -55,6 +58,14 @@ class Date {
                     System.out.println("Enter Hours and Minutes: ");
                     hrs = sc.nextInt();
                     min = sc.nextInt();
+                    if(hrs>23) {
+                        System.out.println("Invalid Hours(0-23)");
+                        break;
+                    }
+                    else if(min>59) {
+                        System.out.println("Invalid Minutes(0-59)");
+                        break;
+                    }
                     d2.setDate(year, month, date, hrs, min);
                     d2.displayDate(choice);
                     break;
@@ -63,6 +74,18 @@ class Date {
                     hrs = sc.nextInt();
                     min = sc.nextInt();
                     sec = sc.nextInt();
+                    if(hrs>23) {
+                        System.out.println("Invalid Hours(0-23)");
+                        break;
+                    }
+                    else if(min>59) {
+                        System.out.println("Invalid Minutes(0-59)");
+                        break;
+                    }
+                    else if(sec>59) {
+                        System.out.println("Invalid Seconds(0-59)");
+                        break;
+                    }
                     d3.setDate(year, month, date, hrs, min, sec);
                     d3.displayDate(choice);
                     break;
