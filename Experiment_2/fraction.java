@@ -1,4 +1,5 @@
 import java.util. *;
+import java.lang.Math;
 class fraction {
     Scanner sc = new Scanner(System.in);
     int a,b,c,d;
@@ -10,13 +11,13 @@ class fraction {
         d = 1;
     }
     void input() {
-        System.out.println("Numerator 1: ");
+        System.out.print("Numerator 1: ");
         a = sc.nextInt();
-        System.out.println("Denominator 1: ");
+        System.out.print("Denominator 1: ");
         b = sc.nextInt();
-        System.out.println("Numerator 2: ");
+        System.out.print("Numerator 2: ");
         c = sc.nextInt();
-        System.out.println("Denominator 2: ");
+        System.out.print("Denominator 2: ");
         d = sc.nextInt();
     }
     void add() {
@@ -28,7 +29,7 @@ class fraction {
     void sub() {
         num = a*d - b*c;
         den = b*d;
-        gcd = reduce(num, den);
+        gcd = reduce(Math.abs(num), den);
         System.out.println("Result: "+num/gcd+"/"+den/gcd);  
     }
     void mul() {
