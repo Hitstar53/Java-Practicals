@@ -2,12 +2,14 @@ import java.util.*;
 class Line {
     double m,c;
     double x=1,x1,y1,x2,y2;
+    //constructor 1
     Line(double m,double c) {
         this.m = m;
         this.c = c;
         System.out.printf("Line Eq: y = %.0f x + %.0f",m,c);
         System.out.printf("\ny = %.0f at x = %.0f",m*x + c,x);
     }
+    //constructor 2
     Line(double m,double x1,double y1) {
         this.m = m;
         this.x1 = x1;
