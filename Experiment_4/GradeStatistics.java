@@ -11,6 +11,7 @@ class GradeStatistics {
             System.out.printf("Enter grade for student %d: ",i+1);
             grade[i] = sc.nextInt();
         }
+        System.out.println(Arrays.toString(grade));
         display(n,grade);
     }
     void display(int n,int [] grade) {
@@ -22,7 +23,6 @@ class GradeStatistics {
         for(int i=0;i<n;i++) {
             std += (grade[i] - avg)*(grade[i] - avg);
         }
-
         std = std/n;
         std = Math.sqrt(std);
         min = grade[0];
@@ -41,9 +41,9 @@ class GradeStatistics {
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int flag,n;
+        GradeStatistics g1 = new GradeStatistics();
+        int flag,n;        
         while(true) {
-            GradeStatistics g1 = new GradeStatistics();
             g1.input();
             System.out.println("\nDo you want to continue?(yes=1/0=no)");
             flag = sc.nextInt();
