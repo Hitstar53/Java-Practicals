@@ -4,7 +4,7 @@ class GradeStatistics {
     Scanner sc = new Scanner(System.in);
     double avg=0,min=0,max=0,med=0,std=0;
     void input() {
-        System.out.println("Enter no. of Students: ");
+        System.out.print("Enter no. of Students: ");
         int n = sc.nextInt();
         int grade[] = new int[n];
         for(int i=0;i<n;i++) {
