@@ -34,8 +34,8 @@ class SalariedEmployee extends Employee {
                 c = i;
             }
         }
-        System.out.println("Details of Highest-Paid Employee:\nID\tName\tAge\tSalary");
-        System.out.printf("%s\t%s\t%d\t%.2f",employees[c].getname(),employees[c].getid(),employees[c].getage(),employees[c].getSalary());
+        System.out.println("\nDetails of Highest-Paid Employee:\nEmployee ID\tName\tAge\tSalary");
+        System.out.printf("%s\t%s\t%d\t%.2f",employees[c].getid(),employees[c].getname(),employees[c].getage(),employees[c].getSalary());
     }
 }
 public class Tester {
@@ -44,7 +44,7 @@ public class Tester {
         String name,id;
         int age,e;
         double salary;
-        System.out.println("No. of Employees?");
+        System.out.print("No. of Employees: ");
         int n = sc.nextInt();
         SalariedEmployee [] employees = new SalariedEmployee[n];
         for(int i=0;i<n;i++) {
