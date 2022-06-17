@@ -1,6 +1,6 @@
 import java.util.*;
 class Testing {
-    int pass,score,x;
+    int score,x;
     int[] ans = new int[8];
     int[] correct = {2,2,1,1,2,2,1,1};
     Scanner sc = new Scanner(System.in);
@@ -32,12 +32,10 @@ class Recruitment extends Testing {
             }
         }
         if(score>=5) {
-            System.out.printf("\nYou passed the 4 tests\nFinal Score: %d/8",score);
-            pass = 1;
+            System.out.printf("\nYou passed the 4 tests\nFinal Score: %d/8\n",score);
         }
         else {
-            System.out.printf("\nYou Failed the 4 tests\nFinal Score: %d/8 (Required >5 to pass)",score);
-            pass = 0;
+            System.out.printf("\nYou Failed the 4 tests\nFinal Score: %d/8 (Required >5 to pass)\n",score);
         }
     }
     void sortapps(Recruitment [] recruits) {
@@ -50,8 +48,10 @@ class Recruitment extends Testing {
                 }
             }
         }
-        System.out.println("The 3 Applicants who got Selected are:\n");
-        System.out.printf("");
+        System.out.println("The 3 Applicants who got Selected are:\nApplicant No.\tScore(%)");
+        for(int i=0;i<3;i++) {
+            System.out.printf("Applicant %d\t%.1f%\n",recruits[i].x,((double)(recruits[i].score)/8)*100);
+        }
     }
 }
 public class TesterAB {
@@ -64,6 +64,6 @@ public class TesterAB {
             recruits[i].takeTest();
             recruits[i].generateResult();
         }
-
+        recruits[0].sortapps(recruits);
     }
 }
