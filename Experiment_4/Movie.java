@@ -26,7 +26,6 @@ class Movie {
             System.out.println(movies[i].name+"\t"+movies[i].budget);
         }
     }
-    //List movies starting with S/A
     void list_sa(Movie [] movies) {
         System.out.println("\nMovies starting with S/A:");
         for(int i=0;i<movies.length;i++) {
@@ -96,5 +95,6 @@ class Movie {
                 break;
             }
         }
+        sc.close();
     }
 }

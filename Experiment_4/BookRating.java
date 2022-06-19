@@ -42,5 +42,6 @@ class BookRating {
                 break;
             }
         }
+        sc.close();
     }
 }

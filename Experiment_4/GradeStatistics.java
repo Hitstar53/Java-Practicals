@@ -51,5 +51,6 @@ class GradeStatistics {
                 break;
             }
         }
+        sc.close();
     }
 }
