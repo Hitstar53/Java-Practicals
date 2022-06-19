@@ -65,5 +65,6 @@ public class Tester {
             employees[i] = new SalariedEmployee(name,id,age,salary);
         }
         employees[0].sortsal(n,employees);
+        sc.close();
     }
 }

@@ -65,5 +65,6 @@ public class TesterAB {
             recruits[i].generateResult();
         }
         recruits[0].sortapps(recruits);
+        sc.close();
     }
 }
