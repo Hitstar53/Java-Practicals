@@ -15,10 +15,22 @@ class Stock {
 }
 class transaction extends Stock {
     void findMaxProfit() {
-        int profit=0;
-        for(int i=1;i<n;i++) {
-            if(prices[i]>prices[i-1]) {
-                profit += prices[i]-prices[i-1];
+        int profit=0,diff=0,k=0,buy=0;
+        for(int i=0;i<n;i++) {
+            diff = 0;
+            for(int j=i+1;j<n;j++) {
+                if(diff<prices[j]-prices[i]) {
+                    diff = prices[j]-prices[i];
+                    k=j;
+                }
+                else if(diff>=prices[j]-prices[i]) {
+                    break;
+                }
+            }
+            if(diff!=0) {
+                profit += diff;
+                System.out.printf("Buy on Day %d and Sell on Day %d\n",i+1,k+1);
+                i=k;
             }
         }
         System.out.println("Maximum Profit: "+profit);
