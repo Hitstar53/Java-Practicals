@@ -15,7 +15,7 @@ class Stock {
 }
 class transaction extends Stock {
     void findMaxProfit() {
-        int profit=0,diff=0,k=0,buy=0;
+        int profit=0,diff=0,k=0;
         for(int i=0;i<n;i++) {
             diff = 0;
             for(int j=i+1;j<n;j++) {
