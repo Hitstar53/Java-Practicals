@@ -1,13 +1,14 @@
 import java.util.Scanner;
 import java.util.Calendar;
+import java.text.*;
 import java.lang.Math; 
 class Bank {
     double time;
     int p;
-    double amt;
+    double amt=0;;
     double rate=0;
     Bank(double time,int p) {
-        this.time = time/12;
+        this.time = time;
         this.p = p;
     }
     void get_rate_of_interest() {
@@ -40,9 +41,8 @@ class SBI_bank extends Bank {
     }
     void display() {
         amt = (1+rate/100);
-        amt = Math.pow(amt, time);
+        amt = Math.pow(amt, time/365);
         amt = p*amt;
-        System.out.println(time);
         System.out.printf("Total amount on Maturity: $%.2f\n",amt);
     }
 }
@@ -71,8 +71,9 @@ class AXIS_Bank extends Bank {
         }
     }
     void display() {
-        amt = p*(1+rate/100);
-        amt = Math.pow(amt, time);
+        amt = (1+rate/100);
+        amt = Math.pow(amt, time/365);
+        amt = p*amt;
         System.out.printf("Total amount on Maturity: $%.2f\n",amt);
     }
 }
@@ -101,14 +102,17 @@ class ICICI_Bank extends Bank {
         }
     }
     void display() {
-        amt = p*(1+rate/100);
-        amt = Math.pow(amt, time);
+        amt = (1+rate/100);
+        amt = Math.pow(amt, time/365);
+        amt = p*amt;
         System.out.printf("Total amount on Maturity: $%.2f\n",amt);
     }
 }
 public class finance {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Calendar cal = Calendar.getInstance();
+        DateFormat date = DateFormat.getDateInstance();
         int choice,flag,p;
         double time;
         while(true) {
@@ -137,6 +141,8 @@ public class finance {
                     System.out.println("Invalid case!");
                     break;
             }
+            cal.add(Calendar.DATE,(int)time);
+            System.out.println("Your Amount will mature on: "+date.format(cal.getTime()));
             System.out.println("Do you want to continue?(yes=1/0=no)");
             flag = sc.nextInt();
             if(flag==0) {
