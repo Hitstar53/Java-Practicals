@@ -39,6 +39,7 @@ class Recruitment extends Testing {
         }
     }
     void sortapps(Recruitment [] recruits) {
+        double perc=0;
         for(int i=0;i<recruits.length-1;i++) {
             for(int j=i+1;j<recruits.length;j++) {
                 if(recruits[i].score<recruits[j].score) {
@@ -50,7 +51,8 @@ class Recruitment extends Testing {
         }
         System.out.println("The 3 Applicants who got Selected are:\nApplicant No.\tScore(%)");
         for(int i=0;i<3;i++) {
-            System.out.printf("Applicant %d\t%.1f%\n",recruits[i].x,((double)(recruits[i].score)/8)*100);
+            perc = ((double)(recruits[i].score)/8)*100;
+            System.out.printf("Applicant %d\t%.2f%%\n",recruits[i].x,perc);
         }
     }
 }
