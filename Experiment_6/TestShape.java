@@ -86,7 +86,7 @@ public class TestShape {
                     System.out.printf("Perimeter of Pentagon: %.2f\nArea of Pentagon: %.2f",p.perimeter,p.area);
                     break;
                 default:
-                    System.out.println("Invalid choice!");
+                    System.out.println("Invalid Shape!");
                     break;
             }
             System.out.println("\nDo you want to continue?(yes=1/0=no)");
