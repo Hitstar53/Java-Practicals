@@ -27,5 +27,6 @@ public class Prime {
             }
         }
         System.out.println("\nTotal prime numbers are: " + count);
+        input.close();
     }
 }

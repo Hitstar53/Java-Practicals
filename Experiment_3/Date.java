@@ -27,7 +27,7 @@ class Date {
         }
     }        
     public static void main( String[] args){
-        Scanner sc= new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         Date d1= new Date();
         Date d2= new Date();
         Date d3= new Date();
@@ -99,6 +99,7 @@ class Date {
                 break;
             } 
         }
+        sc.close();
     } 
 }
 

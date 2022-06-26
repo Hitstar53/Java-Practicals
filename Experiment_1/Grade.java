@@ -16,5 +16,6 @@ public class Grade {
             }
             System.out.println("Do you want to continue? (y=1/n=0)");
         }while(input.nextInt()!=0);
+        input.close();
     }
 }
