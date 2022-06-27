@@ -1,7 +1,7 @@
 import java.util.Scanner;
-import java.util.Calendar;
-import java.util.Date;
-import java.text.*;
+//import java.util.Calendar;
+//import java.util.Date;
+//import java.text.*;
 class Person {
     String name;
     String date;

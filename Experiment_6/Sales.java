@@ -10,7 +10,7 @@ class Publication {
         price = sc.nextInt();
     }
     void putData() {
-        System.out.printf("Details:\nTitle: %s\nPrice: $%.2f",title,price);
+        System.out.printf("\nDetails:\nTitle: %s\nPrice: $%.2f",title,price);
     }    
 }
 class Book extends Publication {
