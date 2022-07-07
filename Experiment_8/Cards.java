@@ -36,6 +36,5 @@ public class Cards {
         genCard gc = new genCard();
         gc.newCard();
         gc.printDeck();
-
     }
 }
