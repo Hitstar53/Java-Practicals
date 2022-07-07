@@ -25,17 +25,66 @@ class Game implements randword {
     }
 }
 class shape {
-    public void draw() {
-        System.out.println("+----+");
-        System.out.println("|    |");
-        System.out.println("|    O");
-        System.out.println("|   /|\\");
-        System.out.println("|   / \\");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("+----+");
+    String[] figure = {"+----+", "|", "|    |", "|    O", "|   /|\\", "|   / \\"};
+    void draw(int n) {
+        if(n==7) {
+            System.out.println(figure[0]);
+        }
+        else if(n==6) {
+            System.out.println(figure[1]);
+            System.out.println(figure[1]);
+            System.out.println(figure[0]);
+        }
+        else if(n==5) {
+            for(int i=0;i<4;i++) {
+                System.out.println(figure[1]);
+            }
+            System.out.println(figure[0]);
+        }
+        else if(n==4) {
+            for (int i=0;i<5;i++) {
+                System.out.println(figure[1]);
+            }
+            System.out.println(figure[0]);
+        }
+        else if(n==3) {
+            System.out.println(figure[0]);
+            System.out.println(figure[2]);
+            for (int i=0;i<5;i++) {
+                System.out.println(figure[1]);
+            }
+            System.out.println(figure[0]);
+        }
+        else if(n==2) {
+            System.out.println(figure[0]);
+            System.out.println(figure[2]);
+            System.out.println(figure[3]);
+            for (int i=0;i<4;i++) {
+                System.out.println(figure[1]);
+            }
+            System.out.println(figure[0]);
+        }
+        else if(n==1) {
+            System.out.println(figure[0]);
+            System.out.println(figure[2]);
+            System.out.println(figure[3]);
+            System.out.println(figure[4]);
+            for (int i=0;i<3;i++) {
+                System.out.println(figure[1]);
+            }
+            System.out.println(figure[0]);
+        }
+        else if(n==0) {
+            System.out.println(figure[0]);
+            System.out.println(figure[2]);
+            System.out.println(figure[3]);
+            System.out.println(figure[4]);
+            System.out.println(figure[5]);
+            for (int i=0;i<2;i++) {
+                System.out.println(figure[1]);
+            }
+            System.out.println(figure[0]);
+        }
     }
 }
 public class hangman {
@@ -68,8 +117,9 @@ public class hangman {
                     guess[temp] = secret_char[temp];
                     secret = secret.replaceFirst(letter.toUpperCase()," ");
                 } else {
-                    System.out.println("Wrong!");
                     i--;
+                    System.out.println("Wrong!");
+                    s1.draw(i);
                 }
                 if(Arrays.equals(guess,secret_char)==true) {
                     System.out.println(guess);
@@ -78,7 +128,6 @@ public class hangman {
                 }
             }
             if(i==0) {
-                s1.draw();
                 System.out.print("You lose!\nThe secret word was: ");
                 System.out.println(secret_char);
             }
