@@ -72,6 +72,7 @@ public class hangman {
                     i--;
                 }
                 if(Arrays.equals(guess,secret_char)==true) {
+                    System.out.println(guess);
                     System.out.println("You win!");
                     break;
                 }
