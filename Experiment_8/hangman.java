@@ -88,6 +88,15 @@ class shape {
     }
 }
 public class hangman {
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Game g1 = new Game();
@@ -97,8 +106,7 @@ public class hangman {
         String letter = new String();
         int flag,temp;
         while(true) {
-            System.out.println("WELCOME TO HANGMAN");
-            System.out.println("I will guess a secret word. On each turn, you guess a letter. If the letter is in the secret word, I will show you where it appears; if not, a part of your body gets strung up on the scaffold. The objective is to guess the word before you are hung.\nNote:Only one instance of a letter will be revealed if the guess is correct!");
+            System.out.println(ANSI_CYAN+"WELCOME TO HANGMAN\nI will guess a secret word. On each turn, you guess a letter. If the letter is in the secret word, I will show you where it appears; if not, a part of your body gets strung up on the scaffold. The objective is to guess the word before you are hung.\nNote:Only one instance of a letter will be revealed if the guess is correct!"+ANSI_RESET);
             secret = g1.ChooseRandomWord();
             char[] guess = new char[secret.length()];
             char[] secret_char = secret.toCharArray();
@@ -107,33 +115,33 @@ public class hangman {
             }
             int i=8;
             while(i>0) {
-                System.out.println("The secret word looks like this:");
+                System.out.println(ANSI_YELLOW+"The secret word looks like this:");
                 System.out.println(guess);
-                System.out.printf("You have %d guesses left!\nGuess a letter: ",i);
+                System.out.printf("You have %d guesses left!\nGuess a letter: %s",i,ANSI_RESET);
                 letter = sc.next();
                 temp = secret.indexOf(letter.toUpperCase());
                 if(temp!=-1) {
-                    System.out.println("Correct!");
+                    System.out.println(ANSI_GREEN+"Correct!"+ANSI_RESET);
                     guess[temp] = secret_char[temp];
                     secret = secret.replaceFirst(letter.toUpperCase()," ");
                 } else {
                     i--;
-                    System.out.println("Wrong!");
+                    System.out.println(ANSI_RED+"Wrong!"+ANSI_RESET);
                     s1.draw(i);
                 }
                 if(Arrays.equals(guess,secret_char)==true) {
                     System.out.println(guess);
-                    System.out.println("You win!");
+                    System.out.println(ANSI_CYAN+"You win!"+ANSI_RESET);
                     break;
                 }
             }
             if(i==0) {
-                System.out.print("You lose!\nThe secret word was: ");
+                System.out.print(ANSI_PURPLE+"You lose!\nThe secret word was: "+ANSI_RESET);
                 System.out.println(secret_char);
             }
-            System.out.println("Do you want to play again?(yes=1/no=0)");
+            System.out.println(ANSI_YELLOW+"Do you want to play again?"+ANSI_GREEN+"\n1. no"+ANSI_RED+"\t2. yes"+ANSI_RESET);
             flag = sc.nextInt();
-            if (flag == 0) {
+            if (flag == 1) {
                 break;
             }
         }
