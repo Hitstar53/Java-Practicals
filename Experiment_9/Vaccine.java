@@ -18,6 +18,7 @@ public class Vaccine {
                 else {
                     flag = 1;
                 }
+                System.out.println("Entry is valid!");
             } 
             catch (InputMismatchException e) {
                 System.out.println("Invalid input(Nust be an integer!)");

@@ -11,16 +11,16 @@ class insufficient_balance extends Exception {
 }
 abstract class Account {
     String name;
-    int account_no;
+    long account_no;
     double balance;
     abstract void deposit(double amt);
     abstract void withdraw(double amt);
     abstract void display();
 }
-class SavingAccount extends Account {
+public class SavingAccount extends Account {
     Scanner sc = new Scanner(System.in);
     double in_rate=3.5,minbal=0;
-    SavingAccount(String name,int account_no,double balance) {
+    SavingAccount(String name,long account_no,double balance) {
         this.name = name;
         this.account_no = account_no;
         this.balance = balance;
@@ -44,19 +44,22 @@ class SavingAccount extends Account {
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the name of the account holder:");
-        String name = sc.next();
-        System.out.println("Enter the account number:");
-        int ac_no = sc.nextInt();
-        System.out.println("Enter the initial balance:");
-        double bal = sc.nextDouble();
+        String name = new String();
+        long ac_no;
+        double bal,minbal;
+        System.out.print("Enter the name of the account holder: ");
+        name = sc.nextLine();
+        System.out.print("Enter the account number: ");
+        ac_no = sc.nextLong();
+        System.out.print("Enter the initial balance: ");
+        bal = sc.nextDouble();
         SavingAccount sa = new SavingAccount(name,ac_no,bal);
-        System.out.println("Enter the minimum balance:");
-        double minbal = sc.nextDouble();
+        System.out.print("Enter the minimum balance: ");
+        minbal = sc.nextDouble();
         sa.setMinBal(minbal);
         double amt;
         while(true) {
-            System.out.println("Welcome to the Saving Account of "+name+"\nSelect 1 option:\n1.Deposit\n2.Withdraw\n3.Display");
+            System.out.println("\nWelcome to the Savings Account of "+name+"\nSelect 1 option:\n1.Deposit\n2.Withdraw\n3.Display");
             int choice = sc.nextInt();
             switch(choice) {
                 case 1:
@@ -101,7 +104,7 @@ class SavingAccount extends Account {
                 default:
                     System.out.println("Invalid choice!");
             }
-            sa.display();
+            if(choice!=3) {sa.display();}
             System.out.println("Do you want to continue?(y/n)");
             char ch = sc.next().charAt(0);
             if(ch=='n') {
