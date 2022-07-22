@@ -38,14 +38,14 @@ class Line {
                     System.out.println("Enter slope & Y-intercept: ");
                     m = sc.nextDouble();
                     c = sc.nextDouble();
-                    Line l1 = new Line(m, c);
+                    new Line(m, c);
                     break;
                 case 2:
                     System.out.println("Enter slope & point(x1,y1): ");
                     m = sc.nextDouble();
                     x1 = sc.nextDouble();
                     y1 = sc.nextDouble();
-                    Line l2 = new Line(m, x1, y1);
+                    new Line(m, x1, y1);
                     break;
                 case 3:
                     System.out.println("Enter point(x1,y1) & point(x2,y2): ");
@@ -53,7 +53,7 @@ class Line {
                     y1 = sc.nextDouble();
                     x2 = sc.nextDouble();
                     y2 = sc.nextDouble();
-                    Line l3 = new Line(x1, y1, x2, y2);
+                    new Line(x1, y1, x2, y2);
                     break;
                 default:
                     System.out.println("Invalid choice");
@@ -65,5 +65,6 @@ class Line {
                 break;
             }
         }
+        sc.close();
     }
 }

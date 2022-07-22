@@ -37,24 +37,24 @@ class bank {
         return amt;
     }
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         bank b1 = new bank();
         System.out.println("Welcome to Banking System:");
         while(true) {
             System.out.println("Select 1 choice:\n1 -> Deposit\n2 -> Withdraw\n3 -> Compund Interest");
-            int choice = input.nextInt();
+            int choice = sc.nextInt();
             double deposit,bal,withdraw;
             int flag;
             switch (choice) {
                 case 1:
                     System.out.println("Enter deposit amount: ");
-                    deposit = input.nextDouble();
+                    deposit = sc.nextDouble();
                     bal = b1.deposit(deposit);
                     System.out.println("Current Balance: $"+bal);
                     break;
                 case 2:
                     System.out.println("Enter Withdraw amount: ");
-                    withdraw = input.nextDouble();
+                    withdraw = sc.nextDouble();
                     bal = b1.withdraw(withdraw);
                     System.out.println("Current Balance: $"+bal);
                     break;
@@ -67,10 +67,11 @@ class bank {
                     break;
             }
             System.out.println("Do you want to continue?(yes=1/no=0)");
-            flag = input.nextInt();
+            flag = sc.nextInt();
             if(flag==0) {
                 break;
             }
         }
+        sc.close();
     }
 }

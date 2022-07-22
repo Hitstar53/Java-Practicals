@@ -71,5 +71,6 @@ class Posting {
                 break;
             }
         }
+        sc.close();
     }
 }

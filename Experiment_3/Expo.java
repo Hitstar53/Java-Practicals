@@ -54,5 +54,6 @@ class Expo {
             if(flag == 0)
                 break;
         }
+        sc.close();
     }
 }

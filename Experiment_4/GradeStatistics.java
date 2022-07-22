@@ -42,7 +42,7 @@ class GradeStatistics {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         GradeStatistics g1 = new GradeStatistics();
-        int flag,n;        
+        int flag;        
         while(true) {
             g1.input();
             System.out.println("\nDo you want to continue?(yes=1/0=no)");

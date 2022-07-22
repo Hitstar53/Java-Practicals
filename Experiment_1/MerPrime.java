@@ -1,4 +1,3 @@
-import java.util. *;
 import java.lang.Math;
 public class MerPrime {
     public int CheckPrime(double n) {

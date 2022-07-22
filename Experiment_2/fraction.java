@@ -119,5 +119,6 @@ class fraction {
                 break;
             }
         }
+        sc.close();
     }
 }

@@ -1,5 +1,4 @@
 import java.util. *;
-import java.lang.Math;
 public class Gcd {
     public static int gcd(int a, int b) {
         if(b==0)
@@ -12,15 +11,16 @@ public class Gcd {
             return gcd(b-a, a);
     }
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         int a,b;
         do{
             System.out.println("Enter the first number: ");
-            a = input.nextInt();
+            a = sc.nextInt();
             System.out.println("Enter the second number: ");
-            b = input.nextInt();
+            b = sc.nextInt();
             System.out.println("GCD of "+a+" and "+b+" is "+gcd(a,b));
             System.out.println("Do you want to continue? (y=1/n=0)");
-        }while(input.nextInt()!=0);
+        }while(sc.nextInt()!=0);
+        sc.close();
     }
 }
